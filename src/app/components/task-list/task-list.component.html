@@ -1,0 +1,14 @@
+<div class="list">
+  <h2 class="list__header">Lista de hoje:</h2>
+  <div *ngIf="todos.length === 0" class="list__emptystate">
+    <h3>Nenhum item ainda!</h3>
+    <p>Adicione um item à sua lista</p>
+  </div>
+  <ul id="list__container">
+    <li *ngFor="let todo of todos" [class]="todo.completed ? 'list__item list__item-checked' : 'list__item'">
+      <input type="checkbox" class="list__check" [checked]="todo.completed" (change)="toggleComplete(todo)" />
+      {{ todo.value }}
+      <button class="list__delete" (click)="deleteTask(todo.id)"></button>
+    </li>
+  </ul>
+</div>

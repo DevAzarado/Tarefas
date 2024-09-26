@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --clr-primary: #2f10f0;
+  --clr-primary-hover: #2508d4;
+  --clr-primary-light: #c5cbfd;
+  --clr-gray100: #eef1f6;
+  --clr-gray200: #e1e5ee;
+  --clr-gray300: #c7ccdb;
+  --clr-gray400: #767b91;
+  --clr-gray500: #4f546c;
+  --radius: 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--clr-gray500);
+  background-color: var(--clr-gray100);
+}
+
+.wrapper {
+  max-width: 35rem;
+  background-color: white;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: var(--radius);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#entry {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+#entry__input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-gray300);
+  background-color: white;
+  flex: 2;
+  transition: border 200ms ease-in;
+}
+
+#entry__input:hover {
+  border: 1px solid var(--clr-primary);
+}
+
+#entry__input:focus {
+  border: 1px solid var(--clr-primary);
+  box-shadow: 0px 0px 10px 2px var(--clr-primary-light);
+  outline: none;
+}
+
+#entry__input::placeholder {
+  color: var(--clr-gray400);
+}
+
+#entry__btn {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: none;
+  outline: none;
+  background-color: var(--clr-primary);
+  color: white;
+  cursor: pointer;
+}
+
+#entry__btn:hover {
+  background-color: var(--clr-primary-hover);
+}
+
+.list {
+  border-top: 1px solid var(--clr-gray100);
+  margin-top: 2rem;
+}
+
+.list__header {
+  margin: 2rem 0;
+}
+
+.list__item {
+  list-style: none;
+  box-shadow: 0px 0px 10px var(--clr-gray300);
+  border-radius: var(--radius);
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  position: relative;
+  display: flex;
+}
+
+.list__item-checked {
+  opacity: 0.6;
+}
+
+.list__delete {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.list__delete::before {
+  content: "\f2ed";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--clr-gray400);
+}
+
+.list__delete:hover::before {
+  color: var(--clr-gray500);
+}
+
+.list__check {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1rem;
+}
+
+.list__emptystate {
+  text-align: center;
+  margin: 3rem 0 2rem;
+  color: var(--clr-gray400);
+  display: block;
+}
+
+.list__emptystate-hidden {
+  display: none;
+}

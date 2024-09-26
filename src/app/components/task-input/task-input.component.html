@@ -1,0 +1,5 @@
+<form (submit)="addTask()" id="entry">
+  <input type="text" id="entry__input" placeholder="O que está em sua mente?" autocomplete="off" [(ngModel)]="input"
+    name="input" autofocus />
+  <button id="entry__btn" type="submit">Adicionar à lista</button>
+</form>
