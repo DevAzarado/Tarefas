@@ -10,19 +10,19 @@ import { TaskService } from 'src/app/services/task.service';
 export class TaskListComponent implements OnInit {
 
   todos: Task[] = [];
-  //1º exemplo.
+  //TODO: 1º exemplo.
   // @Input() refresh: boolean = false;
 
-  //2º exemplo.
+  //TODO: 2º exemplo.
   // @Input() refresh?: EventEmitter<void>;
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
-  
+
     this.todos = this.taskService.getTasks();
 
-    //2º exemplo.
+    //TODO: 2º exemplo.
     // this.refresh?.subscribe(() => {
     //   this.refreshList();
     // });
@@ -32,7 +32,7 @@ export class TaskListComponent implements OnInit {
     });
   }
 
-  //   //2º exemplo.
+  //TODO:2º exemplo.
   // refreshList(): void {
   //   this.todos = this.taskService.getTasks();
   // }
@@ -49,7 +49,7 @@ export class TaskListComponent implements OnInit {
     this.todos = this.taskService.getTasks();
   }
 
-  //1º exemplo.
+  //TODO: 1º exemplo.
   // ngOnChanges(changes: SimpleChanges): void {
   //   if (changes['refresh']) {
   //     this.todos = this.taskService.getTasks();

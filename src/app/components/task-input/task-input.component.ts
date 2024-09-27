@@ -10,7 +10,7 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class TaskInputComponent {
   input: string = '';
-
+  // TODO 1º e 2º
   //@Output() taskAdded = new EventEmitter<void>();
 
   constructor(private taskService: TaskService) { }

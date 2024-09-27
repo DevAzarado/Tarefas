@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class TaskService {
-   // 3 Exemplo
+   //TODO: 3 Exemplo
   // BehaviorSubject para armazenar as tarefas e emitir mudanças. 
   // O BS permite que o componente se inscreva para receber as mudanças automaticamente.
   private todosSubject = new BehaviorSubject<any[]>([]);
@@ -23,7 +23,7 @@ export class TaskService {
     const tasks = this.getTasks();
     tasks.push(task);
     this.saveTasks(tasks);
-    // 3 Exemplo
+    //TODO: 3 Exemplo
     this.todosSubject.next(this.getTasks());
 
   }
