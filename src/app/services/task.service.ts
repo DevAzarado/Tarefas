@@ -9,15 +9,21 @@ export class TaskService {
   //TODO: 3 Exemplo
   // BehaviorSubject para armazenar as tarefas e emitir mudanças. 
   // O BS permite que o componente se inscreva para receber as mudanças automaticamente.
-  private todosSubject = new BehaviorSubject<any[]>([]);
-  todos$ = this.todosSubject.asObservable();
+
+  // private todosSubject = new BehaviorSubject<any[]>([]);
+  // todos$ = this.todosSubject.asObservable();
 
   private localStorageKey = 'taskUser';
 
   getTasks(): Task[] {
     const tasks = localStorage.getItem(this.localStorageKey);
-   // JSON.parse converter uma string no formato JSON em um objeto JavaScript
+    // JSON.parse converter uma string no formato JSON em um objeto JavaScript
     return tasks ? JSON.parse(tasks) : [];
+  }
+
+  private saveTasks(tasks: Task[]): void {
+    //convertendo um objeto JavaScript para string
+    localStorage.setItem(this.localStorageKey, JSON.stringify(tasks));
   }
 
   addTask(task: Task): void {
@@ -25,7 +31,7 @@ export class TaskService {
     tasks.push(task);
     this.saveTasks(tasks);
     //TODO: 3 Exemplo
-    this.todosSubject.next(this.getTasks());
+    //this.todosSubject.next(this.getTasks());
 
   }
 
@@ -38,8 +44,5 @@ export class TaskService {
     this.saveTasks(tasks);
   }
 
-  private saveTasks(tasks: Task[]): void {
-    //convertendo para string
-    localStorage.setItem(this.localStorageKey, JSON.stringify(tasks));
-  }
+
 }

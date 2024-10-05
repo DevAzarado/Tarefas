@@ -11,7 +11,7 @@ import { TaskService } from 'src/app/services/task.service';
 export class TaskInputComponent {
   input: string = '';
   // TODO 1º e 2º
-  //@Output() taskAdded = new EventEmitter<void>();
+  @Output() taskAdded = new EventEmitter<void>();
 
   constructor(private taskService: TaskService) { }
 
@@ -20,7 +20,7 @@ export class TaskInputComponent {
       const newTask = new Task(Math.random() * 10000, this.input);
       this.taskService.addTask(newTask);
       this.input = '';
-      // this.taskAdded.emit(); 
+       this.taskAdded.emit(); 
     }
   }
 }

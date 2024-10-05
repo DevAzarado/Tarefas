@@ -8,12 +8,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AppComponent {
   //   //1º exemplo.
-  // refreshEventPai = false;
+  refreshEventPai = false;
 
   //   //1º exemplo.
-  // refreshList(): void {
-  //   this.refreshEventPai = !this.refreshEventPai;
-  // }
+  refreshList(): void {
+    this.refreshEventPai = !this.refreshEventPai;
+  }
 
 
 }
